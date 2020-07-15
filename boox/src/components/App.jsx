@@ -1,14 +1,42 @@
-import React from 'react';
-import logo from '../assets/logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 import Header from './Header/Header';
+import Landing from './Landing';
+import Login from './Login';
+import Register from './Register';
+import Dashboard from './Dashboard';
+import SearchResults from './SearchResults';
+import BookDetails from './BookDetails';
+import SearchBar from './SearchBar';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <Header/>
-    </div>
-  );
+class App extends Component {
+  componentsWithSearchBar = () => (
+    <React.Fragment>
+      <SearchBar/>
+      <Switch>
+        <Route path='/book/:id' component={ BookDetails }/>
+        <Route path='/search' component={ SearchResults }/>
+      </Switch>
+    </React.Fragment>
+  )
+  render(){
+    return (
+      <div className="App">
+        <Router>
+          <Header/>
+          <Switch>
+            <Route exact path='/' component={ Landing }/>
+            <Route exact path='/login' component={ Login }/>
+            <Route exact path='/register' component={ Register }/>
+            <Route path=':username/dashboard' component={ Dashboard }/>
+            <Route component={ this.componentsWithSearchBar }/>
+          </Switch>
+        </Router>
+      </div>
+    );
+  }
+  
 }
 
 export default App;
