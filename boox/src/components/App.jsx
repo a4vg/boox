@@ -4,7 +4,7 @@ import Header from './Header/Header';
 import Landing from './Landing';
 import Login from './Login';
 import Register from './Register';
-import Dashboard from './Dashboard';
+import Dashboard from './Dashboard/Dashboard';
 import SearchResults from './SearchResults';
 import BookDetails from './BookDetails';
 import SearchBar from './SearchBar/SearchBar';
@@ -30,7 +30,7 @@ class App extends Component {
         phone: '+51 93399568'
       }
     },
-    currentAccountKey: ""
+    currentAccountKey: "",
   }
   
   componentsWithSearchBar = () => (
