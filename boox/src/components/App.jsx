@@ -5,7 +5,7 @@ import Landing from './Landing';
 import Login from './Login';
 import Register from './Register';
 import Dashboard from './Dashboard';
-import SearchResults from './SearchResults';
+import SearchResults from './SearchResults/SearchResults';
 import BookDetails from './BookDetails';
 import SearchBar from './SearchBar/SearchBar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './SearchResults.module.css';
 
 class SearchResults extends Component {
   getQuery = () => {
@@ -8,11 +9,10 @@ class SearchResults extends Component {
 
   render() {
     return (
-      <div>
-      { this.getQuery()
-        ? `This is the search results page for ${ this.getQuery() }`
-        : 'You just searched nothing. Remember to use /search?q=yoursearch'
-      }
+      <div className={ styles.searchResults }>
+        <div className={ styles.searchTitle }>
+          <h2>Resultados de búsqueda: "{ this.getQuery() }" </h2>
+        </div>
       </div>
     );
   }
