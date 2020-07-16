@@ -1,6 +1,6 @@
 :root {
-  --height-factor: 0.8;
-  --button-width: 8rem;
+  --header-height-factor: 0.8;
+  --header-button-width: 8rem;
 }
 
 /*
@@ -29,30 +29,30 @@
 
 .logoContainer h1{
   display: inline-block;
-  font-size: calc(3rem * var(--height-factor));
+  font-size: calc(3rem * var(--header-height-factor));
   font-weight: 700;
 }
 
 .logoContainer img {
   display: inline-block;
-  height: calc(5rem * var(--height-factor));
+  height: calc(5rem * var(--header-height-factor));
   margin-right: 1rem;
 }
 
 /*
  * Buttons
  */
-button {
-  font-size: calc(1rem * var(--height-factor) + 0.1rem);
-  width: var(--button-width);
+.header button {
+  font-size: calc(1rem * var(--header-height-factor) + 0.1rem);
+  width: var(--header-button-width);
   margin: 0px 0.5rem;
 }
 
-button.buy, button.signin {
+.header button.buy, .header button.signin {
   background-color: var(--boox-darkblue);
 }
 
-button.sell, button.register {
+.header button.sell, .header button.register {
   background-color: var(--boox-green);
 }
 
@@ -71,17 +71,17 @@ button.sell, button.register {
 }
 
 .accountContainer img[alt="profile-icon"] {
-  height: calc(3rem * var(--height-factor));
+  height: calc(3rem * var(--header-height-factor));
 }
 
 .accountContainer img[alt="dots-icon"] {
-  height: calc(2rem * var(--height-factor));
+  height: calc(2rem * var(--header-height-factor));
 }
 
 .accountContainer h5 {
   display: inline-block;
   color: var(--boox-green);
-  font-size: calc(1.5rem * var(--height-factor));
+  font-size: calc(1.5rem * var(--header-height-factor));
   font-weight: 700;
   margin: 0px 1em 0px 0.5em;
 }
