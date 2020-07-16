@@ -1,4 +1,5 @@
 :root {
+  --height-factor: 0.8;
   --button-width: 8rem;
 }
 
@@ -28,13 +29,13 @@
 
 .logoContainer h1{
   display: inline-block;
-  font-size: 3rem;
+  font-size: calc(3rem * var(--height-factor));
   font-weight: 700;
 }
 
 .logoContainer img {
   display: inline-block;
-  height: 5rem;
+  height: calc(5rem * var(--height-factor));
   margin-right: 1rem;
 }
 
@@ -42,7 +43,7 @@
  * Buttons
  */
 button {
-  font-size: 1rem;
+  font-size: calc(1rem * var(--height-factor) + 0.1rem);
   width: var(--button-width);
   margin: 0px 0.5rem;
 }
@@ -70,17 +71,17 @@ button.sell, button.register {
 }
 
 .accountContainer img[alt="profile-icon"] {
-  height: 3rem;
+  height: calc(3rem * var(--height-factor));
 }
 
 .accountContainer img[alt="dots-icon"] {
-  height: 2rem;
+  height: calc(2rem * var(--height-factor));
 }
 
 .accountContainer h5 {
   display: inline-block;
   color: var(--boox-green);
-  font-size: 1.5rem;
+  font-size: calc(1.5rem * var(--height-factor));
   font-weight: 700;
   margin: 0px 1em 0px 0.5em;
 }
