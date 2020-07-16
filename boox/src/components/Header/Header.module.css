@@ -1,5 +1,6 @@
 :root {
-  --button-width: 8rem;
+  --header-height-factor: 0.8;
+  --header-button-width: 8rem;
 }
 
 /*
@@ -10,6 +11,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
+  padding: 0.3em 0px;
 }
 
 .header>div {
@@ -20,37 +22,67 @@
  * Logo
  */
 
- .logoContainer *{
+.logoContainer *{
   /* Vertical center */
   vertical-align: middle;
 }
 
 .logoContainer h1{
   display: inline-block;
-  font-size: 3rem;
+  font-size: calc(3rem * var(--header-height-factor));
   font-weight: 700;
 }
 
 .logoContainer img {
   display: inline-block;
-  height: 5rem;
+  height: calc(5rem * var(--header-height-factor));
   margin-right: 1rem;
-  margin-top: 0.3rem;
 }
 
 /*
  * Buttons
  */
-button {
-  font-size: 1rem;
-  width: var(--button-width);
+.header button {
+  font-size: calc(1rem * var(--header-height-factor) + 0.1rem);
+  width: var(--header-button-width);
   margin: 0px 0.5rem;
 }
 
-button.buy, button.signin {
+.header button.buy, .header button.signin {
   background-color: var(--boox-darkblue);
 }
 
-button.sell, button.register {
+.header button.sell, .header button.register {
   background-color: var(--boox-green);
 }
+
+/*
+ * Account Information
+ */
+
+.accountContainer {
+  border-left: solid 2px var(--boox-green);
+  padding-left: 1em;
+}
+
+.accountContainer *{
+  /* Vertical center */
+  vertical-align: middle;
+}
+
+.accountContainer img[alt="profile-icon"] {
+  height: calc(3rem * var(--header-height-factor));
+}
+
+.accountContainer img[alt="dots-icon"] {
+  height: calc(2rem * var(--header-height-factor));
+}
+
+.accountContainer h5 {
+  display: inline-block;
+  color: var(--boox-green);
+  font-size: calc(1.5rem * var(--header-height-factor));
+  font-weight: 700;
+  margin: 0px 1em 0px 0.5em;
+}
+

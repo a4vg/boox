@@ -1,0 +1,29 @@
+:root {
+  --searchbox-button-radius: 8px;
+}
+
+.searchbox input[type=text] {
+  position: relative;
+  border: none;
+  width: 80%;
+  padding-left: 1em;
+}
+
+.searchbox button {
+  width: 20%;
+  padding: 0px 0.1rem;
+  background-color: var(--boox-darkblue); 
+  border-radius: 0px var(--searchbox-button-radius) var(--searchbox-button-radius) 0px;
+}
+
+.searchbox {
+  position: relative;
+  min-width: 20rem;
+  white-space: nowrap; /* Avoid line break on small screens */
+}
+
+.searchbox input[type=text], .searchbox button {
+  height: 100%;
+  box-sizing: border-box;
+  font-size: inherit;
+}
