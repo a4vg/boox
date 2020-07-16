@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Login extends Component {
+class Dashboard extends Component {
   render() {
     return (
       <div>This is the dashboard of { this.props.match.params.username }</div>
@@ -8,4 +8,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Dashboard;
