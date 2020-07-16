@@ -30,7 +30,7 @@ class App extends Component {
         phone: '+51 93399568'
       }
     },
-    currentAccountKey: "",
+    currentAccountKey: "fulanito",
   }
   
   componentsWithSearchBar = () => (
@@ -51,7 +51,7 @@ class App extends Component {
             <Route exact path='/' component={ Landing }/>
             <Route exact path='/login' component={ Login }/>
             <Route exact path='/register' component={ Register }/>
-            <Route path='/:username/dashboard' component={ Dashboard }/>
+            <Route path='/:username/dashboard' component={ () => <Dashboard account={ this.state.accounts[this.state.currentAccountKey] } /> } />
             <Route component={ this.componentsWithSearchBar }/>
           </Switch>
         </Router>
