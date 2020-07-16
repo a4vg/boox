@@ -12,7 +12,6 @@ class SearchBox extends Component {
       <div
         className={styles.searchbox}
         style={{ width: this.props.width, height: this.props.height }}
-        width="100px"
       >
         <input
           type="text"
