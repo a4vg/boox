@@ -14,12 +14,8 @@ class Dashboard extends Component {
 
     state = {
         comp: 'comprador',
-    }
-
-    handleClick = (nextComponent) => {
-        this.setState({
-            comp: nextComponent
-        });
+        text: 'Amo los libros, pero mas el dinero',
+        edit: false,
     }
 
     render() {
@@ -38,8 +34,18 @@ class Dashboard extends Component {
                             />
                             <Media.Body>
                                 {this.props.account ? <h1 color="primary"><b>{this.props.account.username}</b></h1> : <p>No hay cuenta</p>}
-                                <p style={{ textAlign: "left" }}>Amo comprar libros y tambien los vendo.</p>
-                            </Media.Body>1
+                                {this.state.edit ?
+                                    <Row>
+                                        <input type='text' name='description' onChange={e => { this.setState({ text: e.target.value }) }}></input>
+                                        <Button onClick={() => { this.setState({ edit: false }) }}>Apply</Button>
+                                    </Row> :
+                                    <Row>
+                                        <p style={{ textAlign: "left" }} className="ml-3">{ this.state.text }</p>
+                                        <Button className="ml-2" onClick={() => { this.setState({ edit: true }) }}>Edit</Button>
+                                    </Row>
+                                }
+
+                            </Media.Body>
                         </Media>
                     </Col>
                 </Row>
