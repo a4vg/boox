@@ -10,6 +10,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
+  padding: 0.3em 0px;
 }
 
 .header>div {
@@ -20,7 +21,7 @@
  * Logo
  */
 
- .logoContainer *{
+.logoContainer *{
   /* Vertical center */
   vertical-align: middle;
 }
@@ -35,7 +36,6 @@
   display: inline-block;
   height: 5rem;
   margin-right: 1rem;
-  margin-top: 0.3rem;
 }
 
 /*
@@ -54,3 +54,34 @@ button.buy, button.signin {
 button.sell, button.register {
   background-color: var(--boox-green);
 }
+
+/*
+ * Account Information
+ */
+
+.accountContainer {
+  border-left: solid 2px var(--boox-green);
+  padding-left: 1em;
+}
+
+.accountContainer *{
+  /* Vertical center */
+  vertical-align: middle;
+}
+
+.accountContainer img[alt="profile-icon"] {
+  height: 3rem;
+}
+
+.accountContainer img[alt="dots-icon"] {
+  height: 2rem;
+}
+
+.accountContainer h5 {
+  display: inline-block;
+  color: var(--boox-green);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0px 1em 0px 0.5em;
+}
+
