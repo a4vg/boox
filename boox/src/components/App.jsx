@@ -7,7 +7,7 @@ import Register from './Register';
 import Dashboard from './Dashboard';
 import SearchResults from './SearchResults';
 import BookDetails from './BookDetails';
-import SearchBar from './SearchBar';
+import SearchBar from './SearchBar/SearchBar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
