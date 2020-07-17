@@ -1,10 +1,10 @@
-.searchResults div.searchTitle {
+.searchResultsContainer div.searchTitle {
   width: 100%;
   background-color: var(--boox-light-gray);
   padding: 2.5em;
 }
 
-.searchResults div.searchTitle h2 {
+.searchResultsContainer div.searchTitle h2 {
   font-size: 2rem;
   font-weight: 700;
 }
