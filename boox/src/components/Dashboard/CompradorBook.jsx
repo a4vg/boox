@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from '../../assets/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import Media from 'react-bootstrap/Media';
 import { Link } from "react-router-dom";

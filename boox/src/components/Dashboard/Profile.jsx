@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from '../../assets/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Media from 'react-bootstrap/Media';
 import Vendedor from './Vendedor';
 import Comprador from './Comprador';
 import Historial from './Historial';
-import Media from 'react-bootstrap/Media';
 import ProfileIcon from "../../assets/icons/profile-icon.svg";
 
 class Profile extends Component {

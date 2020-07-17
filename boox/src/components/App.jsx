@@ -8,6 +8,8 @@ import Register from "./Register/Register";
 import SearchResults from "./SearchResults/SearchResults";
 import BookDetails from "./BookDetails/BookDetails";
 import SearchBar from "./SearchBar/SearchBar";
+import Profile from './Dashboard/Profile';
+import AddVenta from './Dashboard/AddVenta';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 /* Get books photos */
@@ -128,7 +130,7 @@ class App extends Component {
       b.seller = this.state.sellers.find((s) => {
         return s.accountKey === b.sellerId;
       });
-      
+
       return b;
     });
 
@@ -139,8 +141,8 @@ class App extends Component {
     <React.Fragment>
       <SearchBar />
       <Switch>
-        <Route path="/book/:id" component={(p) => <BookDetails {...p} books={this.state.books}/>} />
-        <Route path="/search" component={(p) => <SearchResults {...p} books={this.state.books}/>} />
+        <Route path="/book/:id" component={(p) => <BookDetails {...p} books={this.state.books} />} />
+        <Route path="/search" component={(p) => <SearchResults {...p} books={this.state.books} />} />
       </Switch>
     </React.Fragment>
   );
@@ -153,9 +155,10 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
-            <Route exact path="/:username/dashboard" component={ () => <Dashboard account={ this.state.accounts[this.state.currentAccountKey] }/> } />
-            <Route component= { this.componentsWithSearchBar } />
-            <Route component= { this.componentsWithSearchBar }/>
+            <Route exact path="/:username/dashboard" component={() => <Dashboard account={this.state.accounts[this.state.currentAccountKey]} />} />
+            <Route path="/:username/dashboard/add-venta" component={AddVenta} />
+            <Route component={this.componentsWithSearchBar} />
+            <Route component={this.componentsWithSearchBar} />
           </Switch>
         </Router>
       </div>

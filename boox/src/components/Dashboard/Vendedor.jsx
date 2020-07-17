@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from '../../assets/bootstrap.min.css';
 import Book from './VendedorBook';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from '../../assets/bootstrap.min.css';
 
 
 class HistorialItem extends Component {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from '../../assets/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -20,9 +20,9 @@ class AddVenta extends Component {
 
         return (
             <Container>
+                <h1>Vender libro</h1>
                 <Row>
-                    <h1>Vender libro</h1>
-                    <Col md={6}>
+                    <Col>
                         <Form>
                             <Form.Group>
                                 <Form.Label>ISBN</Form.Label>
@@ -59,7 +59,7 @@ class AddVenta extends Component {
                             <Button variant="success" type="submit">Poner en venta</Button>
                         </Form>
                     </Col>
-                    <Col md={6}>
+                    <Col>
                         <Card>
                             <img
                                 width={144}
