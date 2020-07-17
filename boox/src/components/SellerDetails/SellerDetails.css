@@ -9,3 +9,7 @@
 .sellerDetails .filledStar path {
   fill: var(--boox-green);
 }
+
+.sellerDetails p {
+  margin: 0;
+}

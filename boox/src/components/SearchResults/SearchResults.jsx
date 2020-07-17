@@ -18,6 +18,13 @@ class SearchResults extends Component {
       : [];
   }
 
+  linkWithBooks = (b) => {
+    return  {
+      pathname: `/book/${b.isbn}`,
+      matchingBooks: this.getMatchingBooks()
+    };
+  }
+
   render() {
     return (
       <div className={styles.searchResultsContainer}>
@@ -29,8 +36,8 @@ class SearchResults extends Component {
           <div className={styles.resultsContainer}>{
             this.getMatchingBooks()
             .map( (b) =>
-              <Link to={`/book/${b.isbn}`} className={ styles.bookResultLink }>
-                <BookResult key={b.isbn} book={b} />
+              <Link key={b.isbn} to={this.linkWithBooks(b)} className={ styles.bookResultLink }>
+                <BookResult book={b} />
               </Link>
             )
           }</div>

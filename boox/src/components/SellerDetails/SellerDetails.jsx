@@ -21,7 +21,6 @@ class SellerDetails extends Component {
   render() {
     return this.props.seller? (
       <div className={`sellerDetails ${this.props.className}`}>
-        <h5><span style={{fontWeight: 700}}>Vendedor:</span></h5>
         <p>
           {this.props.seller.fullname}
         </p>

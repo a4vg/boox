@@ -17,7 +17,10 @@ class BookResult extends Component {
             <p><span style={{fontWeight: 700}}>Estado:</span> {this.props.book.condition}</p>
             <p><span style={{fontWeight: 700}}>ISBN:</span> {this.props.book.isbn}</p>
           </div>
-          <SellerDetails className={styles.sellerDetails} seller={ this.props.book.seller }/>
+          <div className={styles.sellerDetails}>
+            <h5><span style={{fontWeight: 700}}>Vendedor:</span></h5>
+            <SellerDetails seller={ this.props.book.seller }/>
+          </div>
         </div>
         <div className={styles.overlay}>
         </div>

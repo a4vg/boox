@@ -139,7 +139,7 @@ class App extends Component {
     <React.Fragment>
       <SearchBar />
       <Switch>
-        <Route path="/book/:id" component={BookDetails} />
+        <Route path="/book/:id" component={(p) => <BookDetails {...p} books={this.state.books}/>} />
         <Route path="/search" component={(p) => <SearchResults {...p} books={this.state.books}/>} />
       </Switch>
     </React.Fragment>

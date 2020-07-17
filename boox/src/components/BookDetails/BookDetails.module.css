@@ -52,6 +52,14 @@ p.BookDetails {
   margin: 0.1rem;
 }
 
+span.light {
+  font-weight: 400;
+}
+
+a.BookDetails:link, a.BookDetails:visited {
+  color: unset;
+}
+
 /*
  * Buttons
  */
@@ -98,6 +106,11 @@ button.contact {
   border: solid;
   border-width: 2px;
   padding: 0.5rem;
+  cursor: pointer;
+}
+
+.otherImgContainer img:hover {
+  filter:contrast(200%) brightness(150%);
 }
 
 .ptsContainer {
