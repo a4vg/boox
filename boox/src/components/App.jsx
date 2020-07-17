@@ -111,7 +111,7 @@ class App extends Component {
         photos: reqToObject(reqGot[4]),
       },
     ],
-    currentAccountKey: "",
+    currentAccountKey: "menganito",
   };
 
   componentDidMount() {
@@ -153,9 +153,9 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
-            <Route path="/:username/dashboard" component={Dashboard} />
-            <Route component={this.componentsWithSearchBar} />
-            <Route component={ this.componentsWithSearchBar }/>
+            <Route path="/:username/dashboard" component={ () => <Dashboard account={ this.state.accounts[this.state.currentAccountKey] }/> } />
+            <Route component= { this.componentsWithSearchBar } />
+            <Route component= { this.componentsWithSearchBar }/>
           </Switch>
         </Router>
       </div>
