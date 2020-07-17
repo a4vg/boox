@@ -11,6 +11,7 @@ class Landing extends Component {
         <div className={styles.container}>
             <div className={styles.content}>
                 <h1>ENCUENTRA TU LIBRO IDEAL AQUÍ</h1>
+                <br/>
                 <SearchBox height="50px" />
             </div>
         </div>
