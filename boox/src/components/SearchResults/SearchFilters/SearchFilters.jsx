@@ -84,7 +84,6 @@ class SearchFilters extends Component {
               />
             </span>
           </div>
-          <div></div>
         </div>
       </div>
     );
