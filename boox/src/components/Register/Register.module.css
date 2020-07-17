@@ -112,4 +112,5 @@ p.Register {
   margin: auto;
   background: white;
   padding-top: 2rem;
+  z-index: 1;
 }
