@@ -1,0 +1,75 @@
+:root {
+  --button-width: 8rem;
+}
+
+/*
+ * Logo
+ */
+
+.logoContainer img {
+  display: block;
+  height: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+ * Buttons
+ */
+button.crear {
+  border-radius: 0.8rem;
+  font-size: 2rem;
+  width: 15rem;
+  height: 4rem;
+  background-color: var(--boox-blue);
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/*
+ * Inputs
+ */
+input.Register {
+  display: block;
+  height: 4rem;
+  width: 25rem;
+  font-size: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-color: var(--boox-blue);
+  padding-left: 1rem;
+}
+
+input::placeholder {
+  font-size: 1.2rem;
+  color: LightGrey;
+  font-weight: bold;
+}
+
+/*
+ * Labels
+ */
+label.Register {
+  display: block;
+  text-align: left;
+  color: var(--boox-blue);
+  padding-top: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.linkContainer {
+  margin-left: 1rem;
+}
+
+p {
+  text-align: center;
+  font-weight: bold;
+}
