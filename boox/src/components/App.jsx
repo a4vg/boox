@@ -28,7 +28,9 @@ let reqToObject = (req) => {
 };
 
 class App extends Component {
-  state = {
+  constructor() {
+  super();
+  this.state = {
     accounts: {
       fulanito: {
         username: "fulanito",
@@ -111,8 +113,10 @@ class App extends Component {
         photos: reqToObject(reqGot[4]),
       },
     ],
-    currentAccountKey: "menganito",
+    currentAccountKey: null,
+    currentAccountEmail: '',
   };
+  }
 
   componentDidMount() {
     /* Add fullname in sellers */
@@ -144,11 +148,20 @@ class App extends Component {
       </Switch>
     </React.Fragment>
   );
+
+  onEmailChange(email) {
+    this.setState({currentAccountEmail: email});
+    let faccount = Object.values(this.state.accounts).find( obj => 
+      obj.email == email
+    );
+    
+    this.setState({currentAccountKey: faccount?faccount.username:null});
+  }
   render() {
     return (
       <div className="App">
         <Router>
-          <Header account={this.state.accounts[this.state.currentAccountKey]} />
+          <Header account={this.state.accounts[this.state.currentAccountKey]} email={this.state.currentAccountEmail} onEmailChange={this.onEmailChange.bind(this)}/>
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
