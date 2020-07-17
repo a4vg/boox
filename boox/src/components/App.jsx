@@ -8,6 +8,7 @@ import Register from "./Register/Register";
 import SearchResults from "./SearchResults/SearchResults";
 import BookDetails from "./BookDetails/BookDetails";
 import SearchBar from "./SearchBar/SearchBar";
+import Buy from "./Buy/Buy";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 /* Get books photos */
@@ -154,7 +155,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/:username/dashboard" component={ () => <Dashboard account={ this.state.accounts[this.state.currentAccountKey] }/> } />
-            <Route component= { this.componentsWithSearchBar } />
+            <Route exact path="/buy/:bookid/:sellerid" component={Buy} />
             <Route component= { this.componentsWithSearchBar }/>
           </Switch>
         </Router>

@@ -1,0 +1,37 @@
+.buy {
+  padding: 2em;
+}
+
+.buy .title {
+  display: inline-block;
+  width: 100%;
+
+}
+
+.buy .title h1{
+  display: inline;
+  vertical-align: middle;
+}
+
+/* Info icon */
+.buy .title svg {
+  margin: 0px 1em;
+  vertical-align: middle;
+}
+
+.buy .title svg path {
+  fill: var(--boox-blue);
+  transition: 0.2s;
+}
+
+.buy .title svg path:hover {
+  fill: var(--boox-darkblue);
+}
+
+/* Profile icon */
+.buy .title img {
+  width: 80px;
+  vertical-align: middle;
+  margin: 0px 1em;
+  filter: grayscale(100%);
+}

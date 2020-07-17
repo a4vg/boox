@@ -1,0 +1,28 @@
+.progressBarWrapper {
+  position: relative;
+  width: 50%;
+  margin: auto;
+  display: block;
+  transform: translateY(300%);
+}
+
+.progressBarWrapper .icon {
+  width: 50px;
+  display: block;
+}
+
+.progressBarWrapper h5 { /* Must go before .done to allow overwrite */
+  color: var(--boox-light-gray);
+}
+
+.icon.done circle, h5.done {
+  color: var(--boox-blue);
+  fill: var(--boox-blue);
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(17%); /* Center on icon */
+}
