@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import CloudIcon from '../../assets/icons/cloud.svg';
 
-class Profile extends Component {
+class AddVenta extends Component {
 
     state = {
         comp: 'comprador',
@@ -76,4 +76,4 @@ class Profile extends Component {
     }
 }
 
-export default Profile;
+export default AddVenta;
