@@ -21,10 +21,10 @@ class CompradorBook extends Component {
                     />
                     <Media.Body>
                         <h4>La Biblia 2</h4>
-                        <p><b>Por Autor</b></p>
+                        <p style={{textAlign: "left"}}><b>Por Autor</b></p>
                         <Link to="/" className="mr-2">Estado: <img
-                            width={64}
-                            height={64}
+                            width={32}
+                            height={32}
                             className="align-self-center mr-4 ml-2"
                             src={DeliveryIcon}
                             alt="Generic placeholder"

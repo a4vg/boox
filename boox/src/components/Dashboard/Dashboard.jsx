@@ -12,35 +12,10 @@ import ProfileIcon from "../../assets/icons/profile-icon.svg";
 
 class Dashboard extends Component {
 
-    constructor(props, context) {
-        super(props, context);
-
-        this.state = {
-            component: 'comprador',
-        };
-
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    chooseComponent(component) {
-        var nextComponent;
-
-        if (component === 'comprador') {
-            nextComponent = component;
-        }
-        if (component === 'vendedor') {
-            nextComponent = component;
-        }
-        if (component === 'historial') {
-            nextComponent = component;
-        }
-        this.handleClick(nextComponent);
-    }
-
-    handleClick(component) {
-        this.setState({
-            comprador: component,
-        });
+    state = {
+        comp: 'comprador',
+        text: 'Amo los libros, pero mas el dinero',
+        edit: false,
     }
 
     render() {
@@ -58,27 +33,37 @@ class Dashboard extends Component {
                                 alt="Generic placeholder"
                             />
                             <Media.Body>
-                                <h1 color="primary"><b>Menganito</b></h1>
-                                <p>Amo comprar libros y tambien los vendo.</p>
+                                {this.props.account ? <h1 color="primary"><b>{this.props.account.username}</b></h1> : <p>No hay cuenta</p>}
+                                {this.state.edit ?
+                                    <Row>
+                                        <input type='text' name='description' onChange={e => { this.setState({ text: e.target.value }) }}></input>
+                                        <Button onClick={() => { this.setState({ edit: false }) }}>Apply</Button>
+                                    </Row> :
+                                    <Row>
+                                        <p style={{ textAlign: "left" }} className="ml-3">{ this.state.text }</p>
+                                        <Button className="ml-2" onClick={() => { this.setState({ edit: true }) }}>Edit</Button>
+                                    </Row>
+                                }
+
                             </Media.Body>
                         </Media>
                     </Col>
                 </Row>
                 <Row className="mt-4 mb-0">
                     <Container fluid className="mt-0">
-                        <Button type="button" onClick={this.chooseComponent('comprador')}>Comprador</Button>
-                        <Button type="button" onClick={this.chooseComponent('vendedor')}>Vendedor</Button>
-                        <Button type="button" onClick={this.chooseComponent('historial')}>Historial</Button>
+                        <Button type="button" onClick={() => { this.setState({ comp: 'vendedor' }) }}>Vendedor</Button>
+                        <Button type="button" onClick={() => { this.setState({ comp: 'comprador' }) }}>Comprador</Button>
+                        <Button type="button" onClick={() => { this.setState({ comp: 'historial' }) }}>Historial</Button>
                     </Container>
                 </Row>
                 <Row>
-                {this.state.component === 'comprador' && <Comprador />}
+                    {this.state.comp === 'vendedor' && <Vendedor />}
                 </Row>
                 <Row>
-                {this.state.component === 'vendedor' && <Vendedor />}
+                    {this.state.comp === 'comprador' && <Comprador />}
                 </Row>
                 <Row>
-                {this.state.component === 'historial' && <Historial />}
+                    {this.state.comp === 'historial' && <Historial />}
                 </Row>
             </Container>
         );

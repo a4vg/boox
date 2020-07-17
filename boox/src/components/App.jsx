@@ -155,6 +155,7 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route path="/:username/dashboard" component={Dashboard} />
             <Route component={this.componentsWithSearchBar} />
+            <Route component={ this.componentsWithSearchBar }/>
           </Switch>
         </Router>
       </div>
