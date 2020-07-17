@@ -23,7 +23,6 @@ class Landing extends Component {
             <BookSlider title={"Libros sugeridos"} />
         </div>
       </div>
-
     );
   }
 }

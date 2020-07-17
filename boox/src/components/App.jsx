@@ -9,6 +9,7 @@ import SearchResults from "./SearchResults/SearchResults";
 import BookDetails from "./BookDetails/BookDetails";
 import SearchBar from "./SearchBar/SearchBar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Footer from "./Footer/Footer";
 
 /* Get books photos */
 const reqGot = [
@@ -157,6 +158,7 @@ class App extends Component {
             <Route component= { this.componentsWithSearchBar } />
             <Route component= { this.componentsWithSearchBar }/>
           </Switch>
+          <Footer/>
         </Router>
       </div>
     );
