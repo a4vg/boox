@@ -86,8 +86,10 @@ class SearchResults extends Component {
   };
 
   getMatchingBooks = () => {
-    return this.state.books
+    return this.getQuery()?
+      this.state.books
       .filter((b) => b.title.toLowerCase().includes(this.getQuery().toLowerCase()))
+      : [];
   }
 
   componentDidMount() {
