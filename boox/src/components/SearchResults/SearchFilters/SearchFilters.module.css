@@ -1,0 +1,121 @@
+:root {
+  --filters-checkbox-size: 25px;
+  --filters-border-width: 2px;
+}
+
+.filterContainer {
+  position: relative;
+  display: inline-block;
+  width: 15%;
+  min-width: 15em;
+}
+
+.filterTitle {
+  background-color: var(--boox-darkblue);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 0.5em;
+  padding-left: 2rem;  /* Comment to center filter title */
+  /* Uncomment to center filter title
+  text-align: center; */
+}
+
+.filters {
+  border-right: solid var(--filters-border-width) var(--boox-darkblue);
+  border-bottom: solid var(--filters-border-width) var(--boox-darkblue);
+  padding-bottom: 1em;
+}
+
+.filters label {
+  display: flex;
+  /* Uncomment to center filter options
+  justify-content: center; */
+  align-items: center; 
+  margin: 0.5em 0;
+  cursor: pointer;
+}
+
+.filters label .labelText {
+  /* Align label texts and checkboxes in two columns */
+  width: 70%;
+  float: left;
+}
+
+.filters legend {
+  display: inline-block;
+  margin-top: 1rem;
+  /* Uncomment to show subtitle in a box with borders
+  padding: 0.3em;
+  border: solid var(--filters-border-width) var(--boox-darkblue);*/
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.filters > div {
+  display: inline-block;
+  width: 100%;
+  border-top: solid var(--filters-border-width) var(--boox-darkblue);
+  padding-left: 2rem;
+  box-sizing: border-box; /* Include padding as part of div size */
+}
+
+
+/*
+ * Checkbox (from https://www.w3schools.com/howto/howto_css_custom_checkbox.asp)
+ */
+
+/* Hide the browser's default checkbox */
+.filters input[type="checkbox"] {
+  display: none;
+}
+
+/* Create a custom checkbox */
+.customCheckbox {
+  height: var(--filters-checkbox-size);
+  width: var(--filters-checkbox-size);
+  display: inline-block;
+  position: relative;
+  background-color: var(--boox-light-gray);
+}
+
+/* On mouse-over, add a grey background color */
+.customCheckbox:hover {
+  background-color: #ccc;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.customCheckbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+input[type=checkbox]:checked ~ .customCheckbox {
+  background-color: var(--boox-blue);
+}
+
+/* Show the checkmark when checked */
+input[type=checkbox]:checked ~ .customCheckbox:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+input[type=checkbox]:checked + .customCheckbox:after {
+  left: calc(var(--filters-checkbox-size) / 3);
+  top: calc(var(--filters-checkbox-size) / 6);
+  width: calc(var(--filters-checkbox-size) / 5);
+  height: calc(var(--filters-checkbox-size) / 2);
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+
+/*
+ * Slider
+ */
+.filters .sliderWrapper {
+  display: inline-block;
+  width: 70%;
+}

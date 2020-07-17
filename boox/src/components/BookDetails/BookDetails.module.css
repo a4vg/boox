@@ -1,0 +1,120 @@
+:root {
+  --button-width: 8rem;
+}
+
+.row {
+  display: flex;
+}
+
+.columnEdge {
+  flex: 10%;
+  margin-top: 10rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 4rem;
+  color: grey;
+}
+
+.column {
+  flex: 40%;
+  height: 30rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.subcolumn {
+  flex: 50%;
+}
+
+h1.BookDetails {
+  font-weight: bold;
+  font-size: 4rem;
+}
+
+h2.BookDetails {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-left: 15rem;
+  margin-bottom: 1rem;
+}
+
+h3.BookDetails {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+}
+
+p.BookDetails {
+	text-align: left;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0.1rem;
+}
+
+span.light {
+  font-weight: 400;
+}
+
+a.BookDetails:link, a.BookDetails:visited {
+  color: unset;
+}
+
+/*
+ * Buttons
+ */
+button.return {
+  border-radius: 1rem;
+  font-size: 1rem;
+  background-color: var(--boox-blue);
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+button.contact {
+  border-radius: 1.5rem;
+  font-size: 1.5rem;
+  background-color: var(--boox-blue);
+  display: block;
+  margin-top: 4rem;
+}
+
+
+.mainImgContainer img {
+  display: block;
+  height: 20rem;
+  
+  margin-right: auto;
+  margin-left: auto;
+  border: solid;
+  border-width: 2px;
+  padding: 1rem;
+}
+
+.imgColumn {
+	flex: 20%;
+}
+
+.otherImgContainer img {
+  display: block;
+  height: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  border: solid;
+  border-width: 2px;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.otherImgContainer img:hover {
+  filter:contrast(200%) brightness(150%);
+}
+
+.ptsContainer {
+  margin-left: 1rem;
+  margin-top: 3rem;
+  font-weight: bold;
+}

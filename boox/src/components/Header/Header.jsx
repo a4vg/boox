@@ -4,8 +4,33 @@ import Logo from "../../assets/logo.svg";
 import ProfileIcon from "../../assets/icons/profile-icon.svg";
 import DotsIcon from "../../assets/icons/dots-icon.svg";
 import styles from "./Header.module.css";
+import Register from "./../Register/Register";
+import Login from "./../Login/Login";
 
 class Header extends Component {
+  constructor() {
+    super();
+    this.state = {
+      showRegister: false,
+      showLogin: false
+    };
+  }
+  toggleRegister() {
+    this.setState({
+      showRegister: !this.state.showRegister
+    });
+  }
+  toggleLogin() {
+    this.setState({
+      showLogin: !this.state.showLogin
+    });
+  }
+  change() {
+    this.setState({
+    	showRegister: !this.state.showRegister,
+      showLogin: !this.state.showLogin
+    });
+  }
   render() {
     return (
       <header className={styles.header}>
@@ -28,13 +53,28 @@ class Header extends Component {
                 </Link>
             </div>
           : <div className={styles.signinRegisterContainer}>
-              <Link to="login">
-                <button className={styles.signin}>Ingresar</button>
-              </Link>
-              <Link to="register">
-                <button className={styles.register}>Regístrate</button>
-              </Link>
+              <button className={styles.signin} onClick={this.toggleLogin.bind(this)}>
+              	Ingresar
+              </button>
+              <button className={styles.register} onClick={this.toggleRegister.bind(this)}>
+		  					Regístrate
+              </button>
+              {this.state.showRegister
+              	? <Register
+              			closePopup={this.toggleRegister.bind(this)}
+              			change={this.change.bind(this)}
+              		/>
+            		: null
+            	}
+            	{this.state.showLogin
+              	? <Login
+              			closePopup={this.toggleLogin.bind(this)}
+              			change={this.change.bind(this)}
+              		/>
+            		: null
+            	}
             </div>
+            
         }
       </header>
     );
