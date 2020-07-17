@@ -1,0 +1,29 @@
+.bookResult {
+  display: flex;
+  border: solid var(--boox-blue);
+  padding: 1em;
+  margin: 1em auto;
+  width: 80%;
+  min-width: 30em;
+  text-align: left; /* for h4 */
+  align-items: center;
+}
+
+.bookResult p{
+  text-align: left;
+  margin: 0;
+}
+
+.bookResult img {
+  display: block;
+  object-fit: contain;
+  min-width: 150px;
+  width: 20%;
+  height: auto;
+  margin: 0px 1em;
+}
+
+.listingDetails, .bookDetails, .sellerDetails {
+  display: inline-block;
+  /*text-align: left;*/
+}

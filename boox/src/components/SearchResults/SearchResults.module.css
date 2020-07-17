@@ -8,3 +8,14 @@
   font-size: 2rem;
   font-weight: 700;
 }
+
+
+.filterResultsContainer{
+  display: flex;
+  align-items: top;
+}
+
+.resultsContainer {
+  display: inline-block;
+  width: 90%;
+}

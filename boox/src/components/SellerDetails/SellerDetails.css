@@ -1,0 +1,11 @@
+.sellerDetails {
+  position: relative;
+}
+
+.sellerDetails .emptyStar, .sellerDetails .filledStar {
+  width: 20px;
+  margin: 0px 1px;
+}
+.sellerDetails .filledStar path {
+  fill: var(--boox-green);
+}
