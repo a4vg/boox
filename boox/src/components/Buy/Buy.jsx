@@ -4,6 +4,7 @@ import { ReactComponent as InfoIcon } from '../../assets/icons/info.svg';
 import ProfileIcon from '../../assets/icons/profile-icon.svg';
 import BookPic from '../../assets/books/clash-kings/front.JPG';
 import SellerDetails from '../SellerDetails/SellerDetails';
+import Chat from '../Chat/Chat';
 import {Link} from 'react-router-dom';
 import styles from './Buy.module.css';
 
@@ -39,6 +40,7 @@ class Buy extends Component {
         </div>
         <div className={styles.BookStageContainer}>
           <div className={styles.bookDetails}>
+            <Chat/>
             <h5>Estas intentando comprar el libro...</h5>
             <img src={BookPic}/>
             <div className={styles.text}>
@@ -46,6 +48,7 @@ class Buy extends Component {
               <h5>Vendido por...</h5>
               <SellerDetails seller={book.seller}/>
             </div>
+
           </div>
           <div className={styles.contentStage}>
           
