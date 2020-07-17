@@ -112,4 +112,5 @@ p.Login {
   margin: auto;
   background: white;
   padding-top: 6rem;
+  z-index: 1;
 }
