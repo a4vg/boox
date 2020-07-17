@@ -29,7 +29,7 @@ class Buy extends Component {
   }
 
   render() {
-    let { book } = this.state;
+    let book = this.props.location.book? this.props.location.book : this.state.book;
     return (
       <div className={ styles.buy }>
         <div className={ styles.title }>
@@ -42,16 +42,15 @@ class Buy extends Component {
           <div className={styles.bookDetails}>
             <Chat/>
             <h5>Estas intentando comprar el libro...</h5>
-            <img src={BookPic}/>
+            <img src={book.photos? book.photos.front : BookPic}/>
             <div className={styles.text}>
               <h4>{book.title}</h4>
               <h5>Vendido por...</h5>
               <SellerDetails seller={book.seller}/>
             </div>
-
           </div>
           <div className={styles.contentStage}>
-          
+            
           </div>
         </div>
         
