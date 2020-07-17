@@ -11,26 +11,26 @@ class Register extends Component {
 	  	<img src={ Logo } />
 	  </div>
       <form>
-		<label>Nombre y Apellidos</label>
-		<input type="text" placeholder="Juan Pérez"/>
+		<label className={ styles.Register }>Nombre y Apellidos</label>
+		<input className={ styles.Register } type="text" placeholder="Juan Pérez"/>
 
-		<label>Correo electrónico</label>
-		<input type="text" placeholder="example@boox.com"/>
+		<label className={ styles.Register }>Correo electrónico</label>
+		<input className={ styles.Register } type="text" placeholder="example@boox.com"/>
 
-		<label>Número telefónico</label>
-		<input type="text" placeholder="+(51)985 486 665"/>
+		<label className={ styles.Register }>Número telefónico</label>
+		<input className={ styles.Register } type="text" placeholder="+(51)985 486 665"/>
 
-		<label>Contraseña</label>
-		<input type="password"/>
+		<label className={ styles.Register }>Contraseña</label>
+		<input className={ styles.Register } type="password"/>
 
-		<label>Confirme Contraseña</label>
-		<input type="password"/>
+		<label className={ styles.Register }>Confirme Contraseña</label>
+		<input className={ styles.Register } type="password"/>
 
 		<p/>
 		<button className={ styles.crear }>Crear</button>
 	  </form>
 	  <div>
-		<p>¿Ya tienes una cuenta?
+		<p className={ styles.Register }>¿Ya tienes una cuenta?
 		  <Link to="/login" className={ styles.linkContainer }>
 		  Inicia sesión
 		  </Link>

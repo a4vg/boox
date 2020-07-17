@@ -11,17 +11,17 @@ class Login extends Component {
 	  	<img src={ Logo } />
 	  </div>
       <form>
-		<label>Correo electrónico</label>
-		<input type="text" placeholder="example@boox.com"/>
+		<label className={ styles.Login }>Correo electrónico</label>
+		<input className={ styles.Login } type="text" placeholder="example@boox.com"/>
 
-		<label>Contraseña</label>
-		<input type="password"/>
+		<label className={ styles.Login }>Contraseña</label>
+		<input className={ styles.Login } type="password"/>
 
 		<p/>
 		<button className={ styles.ingresar }>Ingresar</button>
 	  </form>
 	  <div>
-		<p>¿No tienes una cuenta?
+		<p className={ styles.Login }>¿No tienes una cuenta?
 		  <Link to="/register" className={ styles.linkContainer }>
 		  Crea una
 		  </Link>

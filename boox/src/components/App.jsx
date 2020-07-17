@@ -6,7 +6,7 @@ import Dashboard from './Dashboard/Dashboard';
 import Login from './Login/Login';
 import Register from './Register/Register';
 import SearchResults from './SearchResults';
-import BookDetails from './BookDetails';
+import BookDetails from './BookDetails/BookDetails';
 import SearchBar from './SearchBar/SearchBar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
