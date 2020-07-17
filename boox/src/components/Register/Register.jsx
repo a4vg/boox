@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Logo from "../../assets/logo.svg";
 import styles from "./Register.module.css";
-import { Link } from "react-router-dom";
 
 class Register extends Component {
   render() {
     return (
-	  <>
+      <>
+	<div className={ styles.popup }>
+	  <button className={ styles.close } onClick={this.props.closePopup}>X</button>
+	<div className={ styles.popup_inner }>
 	  <div className={ styles.logoContainer }>
 	  	<img src={ Logo } />
 	  </div>
@@ -31,12 +33,14 @@ class Register extends Component {
 	  </form>
 	  <div>
 		<p className={ styles.Register }>¿Ya tienes una cuenta?
-		  <Link to="/login" className={ styles.linkContainer }>
+		  <button className={ styles.linkContainer } onClick={this.props.change}>
 		  Inicia sesión
-		  </Link>
+		  </button>
 		</p>
 	  </div>
-	  </>
+	</div>
+	</div>
+      </>
     );
   }
 }

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Logo from "../../assets/logo.svg";
 import styles from "./Login.module.css";
-import { Link } from "react-router-dom";
 
 class Login extends Component {
   render() {
     return (
-	  <>
+      <>
+	<div className={ styles.popup }>
+	  <button className={ styles.close } onClick={this.props.closePopup}>X</button>
+	<div className={ styles.popup_inner }>
 	  <div className={ styles.logoContainer }>
 	  	<img src={ Logo } />
 	  </div>
@@ -22,12 +24,14 @@ class Login extends Component {
 	  </form>
 	  <div>
 		<p className={ styles.Login }>¿No tienes una cuenta?
-		  <Link to="/register" className={ styles.linkContainer }>
+		  <button className={ styles.linkContainer } onClick={this.props.change}>
 		  Crea una
-		  </Link>
+		  </button>
 		</p>
 	  </div>
-	  </>
+	</div>
+	</div>
+      </>
     );
   }
 }
