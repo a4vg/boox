@@ -6,7 +6,11 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
+import Image from 'react-bootstrap/Image';
+import Modal from 'react-bootstrap/Modal';
 import CloudIcon from '../../assets/icons/cloud.svg';
+import Alert from 'react-bootstrap/Alert';
+import { useState } from "react";
 
 class AddVenta extends Component {
 
@@ -14,12 +18,36 @@ class AddVenta extends Component {
         comp: 'comprador',
         text: 'Amo los libros, pero mas el dinero',
         edit: false,
+        finished: false,
+    }
+
+    Finished = () => {
+        const [show, setShow] = useState(false);
+
+        const handleClose = () => setShow(false);
+        const handleShow = () => setShow(true);
+
+        return (
+            <>
+                <Button variant="success" block onClick={handleShow}><h3>Poner en venta</h3></Button>
+
+                <Modal show={show} onHide={handleClose}>
+
+                    <Modal.Body>Se guardo el libro</Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="success" onClick={handleClose}>
+                            Cerrar
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+            </>
+        );
     }
 
     render() {
 
         return (
-            <Container>
+            <Container className="mt-5">
                 <h1>Vender libro</h1>
                 <Row>
                     <Col>
@@ -56,19 +84,18 @@ class AddVenta extends Component {
                                     <option>Reliquia</option>
                                 </Form.Control>
                             </Form.Group>
-                            <Button variant="success" type="submit">Poner en venta</Button>
+                            <hr></hr>
+                            <div style={{ textAlign: "center" }}>
+                                <this.Finished />
+                            </div>
                         </Form>
                     </Col>
                     <Col>
                         <Card>
-                            <img
-                                width={144}
-                                height={144}
-                                className="align-self-center mr-4 ml-2"
-                                src={CloudIcon}
-                                alt="Generic placeholder"
-                            />
+                            <Image src={CloudIcon} height={128} className="my-4" />
+                            <Card.Body style={{ textAlign: 'center' }}><b>Sube fotos de tu libro.</b></Card.Body>
                         </Card>
+                        <Alert variant='primary'>Al menos una foto es requerida.</Alert>
                     </Col>
                 </Row>
             </Container>

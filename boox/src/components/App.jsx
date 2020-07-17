@@ -8,7 +8,6 @@ import Register from "./Register/Register";
 import SearchResults from "./SearchResults/SearchResults";
 import BookDetails from "./BookDetails/BookDetails";
 import SearchBar from "./SearchBar/SearchBar";
-import Profile from './Dashboard/Profile';
 import AddVenta from './Dashboard/AddVenta';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
