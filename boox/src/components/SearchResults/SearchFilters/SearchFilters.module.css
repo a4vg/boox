@@ -8,8 +8,6 @@
   display: inline-block;
   width: 15%;
   min-width: 15em;
-  border-right: solid var(--filters-border-width) var(--boox-darkblue);
-  border-bottom: solid var(--filters-border-width) var(--boox-darkblue);
 }
 
 .filterTitle {
@@ -21,6 +19,12 @@
   padding-left: 2rem;  /* Comment to center filter title */
   /* Uncomment to center filter title
   text-align: center; */
+}
+
+.filters {
+  border-right: solid var(--filters-border-width) var(--boox-darkblue);
+  border-bottom: solid var(--filters-border-width) var(--boox-darkblue);
+  padding-bottom: 1em;
 }
 
 .filters label {
