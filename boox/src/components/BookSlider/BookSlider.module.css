@@ -1,0 +1,27 @@
+.slider{
+    margin: 2% 5% 4% 5%;
+}
+
+.slider h2{
+    font-weight: bolder;
+    color: #334795;
+}
+
+.bookCard{
+    width: 1%;
+    margin-top: 7%;
+    display: inline-block;
+    text-align: center;
+}
+
+.bookCard img {
+    height: 10em;
+    position: relative;
+    margin-left: 30%;
+}
+
+.bookCard p{
+    margin-top: 5%;
+    color: #334795;
+    font-weight: bolder;
+}

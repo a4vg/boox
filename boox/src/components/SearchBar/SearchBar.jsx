@@ -6,7 +6,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div className={ styles.searchbar }>
-        <SearchBox width="50%" height="2.5rem"/>
+        <SearchBox width="50%" height="2.5rem" />
       </div>
     );
   }

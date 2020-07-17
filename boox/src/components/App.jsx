@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Header from "./Header/Header";
-import Landing from "./Landing";
+import Landing from "./Landing/Landing";
 import Dashboard from "./Dashboard/Dashboard";
 import Login from "./Login/Login";
 import Register from "./Register/Register";
