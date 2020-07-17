@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SearchFilters from "./SearchFilters/SearchFilters";
 import BookResult from "./BookResult/BookResult";
+import { Link } from "react-router-dom";
 import styles from "./SearchResults.module.css";
 const reqGot = [
   require.context("../../assets/books/game-thrones", false),
@@ -87,7 +88,6 @@ class SearchResults extends Component {
   getMatchingBooks = () => {
     return this.state.books
       .filter((b) => b.title.toLowerCase().includes(this.getQuery().toLowerCase()))
-      .map( (b) => <BookResult key={b.isbn} book={b} />);
   }
 
   componentDidMount() {
@@ -100,8 +100,6 @@ class SearchResults extends Component {
 
     this.setState({ books: booksWithSeller });
   }
-  //this.state.books.filter((b) => b.title.toLowerCase().includes(this.getQuery().toLowerCase()));
-  // .map( (b) => return <BookResult book={b} />)
 
   render() {
     return (
@@ -111,7 +109,14 @@ class SearchResults extends Component {
         </div>
         <div className={styles.filterResultsContainer}>
           <SearchFilters />
-          <div className={styles.resultsContainer}>{this.getMatchingBooks()}</div>
+          <div className={styles.resultsContainer}>{
+            this.getMatchingBooks()
+            .map( (b) =>
+              <Link to={`/book/${b.isbn}`} className={ styles.bookResultLink}>
+                <BookResult key={b.isbn} book={b} />
+              </Link>
+            )
+          }</div>
         </div>
       </div>
     );

@@ -19,3 +19,7 @@
   display: inline-block;
   width: 90%;
 }
+
+.bookResultLink:link, .bookResultLink:visited {
+  color: unset;
+}
