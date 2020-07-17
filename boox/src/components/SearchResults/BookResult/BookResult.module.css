@@ -1,12 +1,18 @@
+:root{
+  --bookResult--padding-left: 1em;
+}
+
 .bookResult {
+  position: relative;
   display: flex;
   border: solid var(--boox-blue);
-  padding: 1em;
+  padding: var(--bookResult--padding-left);
   margin: 1em auto;
   width: 80%;
   min-width: 30em;
   text-align: left; /* for h4 */
   align-items: center;
+  cursor: pointer;
 }
 
 .bookResult p{
@@ -21,6 +27,20 @@
   width: 20%;
   height: auto;
   margin: 0px 1em;
+}
+
+.overlay {
+  padding: 0;
+  margin: calc(-1*var(--bookResult--padding-left));
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.overlay:hover {
+  background-color: var(--boox-light-gray);
+  opacity: 50%;
 }
 
 .listingDetails, .bookDetails, .sellerDetails {

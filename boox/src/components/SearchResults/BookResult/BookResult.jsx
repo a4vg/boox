@@ -19,6 +19,8 @@ class BookResult extends Component {
           </div>
           <SellerDetails className={styles.sellerDetails} seller={ this.props.book.seller }/>
         </div>
+        <div className={styles.overlay}>
+        </div>
       </div>
     );
   }
