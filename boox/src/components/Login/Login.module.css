@@ -101,6 +101,7 @@ p.Login {
   bottom: 0;
   margin: auto;
   background-color: rgba(0,0,0, 0.5);
+  z-index: 1;
 }
 .popup_inner {
   overflow-y: scroll;
@@ -112,5 +113,4 @@ p.Login {
   margin: auto;
   background: white;
   padding-top: 6rem;
-  z-index: 1;
 }
