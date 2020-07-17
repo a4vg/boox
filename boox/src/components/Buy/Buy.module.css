@@ -14,17 +14,17 @@
 }
 
 /* Info icon */
-.buy .title svg {
+.buy .title svg.infoicon {
   margin: 0px 1em;
   vertical-align: middle;
 }
 
-.buy .title svg path {
+.buy .title svg.infoicon path {
   fill: var(--boox-blue);
   transition: 0.2s;
 }
 
-.buy .title svg path:hover {
+.buy .title svg.infoicon path:hover {
   fill: var(--boox-darkblue);
 }
 
@@ -35,3 +35,48 @@
   margin: 0px 1em;
   filter: grayscale(100%);
 }
+
+.buy .bookDetails, .buy .contentStage {
+  display: inline-block;
+}
+
+.BookStageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.buy .bookDetails {
+  width: 40%;
+}
+
+.buy .contentStage {
+  width: 60%;
+}
+
+
+ /* Book Details */
+.bookDetails img {
+ width: 40%;
+ float: left;
+ border: solid 5px var(--boox-blue);
+ padding: 5px;
+}
+
+.bookDetails .text {
+ display: inline-block;
+ width: 50%;
+ margin-left: 1em;
+}
+
+.bookDetails .text h4 {
+  font-weight: 700;
+}
+
+
+
+
+
+
+
+
+

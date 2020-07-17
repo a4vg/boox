@@ -1,9 +1,9 @@
 .progressBarWrapper {
   position: relative;
   width: 50%;
-  margin: auto;
   display: block;
-  transform: translateY(300%);
+  margin: 1rem auto 4rem auto;
+  /*transform: translateY(300%);*/
 }
 
 .progressBarWrapper .icon {
