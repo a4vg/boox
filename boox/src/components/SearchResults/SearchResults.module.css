@@ -1,0 +1,25 @@
+.searchResultsContainer div.searchTitle {
+  width: 100%;
+  background-color: var(--boox-light-gray);
+  padding: 2.5em;
+}
+
+.searchResultsContainer div.searchTitle h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+
+.filterResultsContainer{
+  display: flex;
+  align-items: top;
+}
+
+.resultsContainer {
+  display: inline-block;
+  width: 90%;
+}
+
+.bookResultLink:link, .bookResultLink:visited {
+  color: unset;
+}
