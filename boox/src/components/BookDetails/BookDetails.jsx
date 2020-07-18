@@ -40,6 +40,13 @@ class BookDetails extends Component {
     }
   }
 
+  contactLink = (book) => {
+    return {
+      pathname: `/buy/${book.isbn}/${book.sellerId}`,
+      book: book
+    }
+  }
+
   render() {
     let book = this.props.books.find(
       (b) => b.isbn === this.props.match.params.id
@@ -90,13 +97,13 @@ class BookDetails extends Component {
             </p>
             <div className={styles.row}>
               <div className={styles.subcolumn}>
-                <Link to={`/dashboard/${ book.sellerId }`} className={styles.BookDetails}>
+                <Link to={`/${ book.sellerId }/dashboard`} className={styles.BookDetails}>
                   <h3 className={styles.BookDetails}>Vendedor</h3>
                 </Link>
                 <SellerDetails seller={book.seller} className={styles.BookDetails}/>
               </div>
               <div className={styles.subolumn}>
-                <Link to={`/dashboard/${ book.sellerId }`} className={styles.BookDetails}>
+                <Link to={this.contactLink(book)} className={styles.BookDetails}>
                   <button className={styles.contact}>Contactar</button>
                 </Link>
               </div>
