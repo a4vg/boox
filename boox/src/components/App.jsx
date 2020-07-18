@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Header from "./Header/Header";
-import Landing from "./Landing";
+import Landing from "./Landing/Landing";
 import Dashboard from "./Dashboard/Dashboard";
 import Login from "./Login/Login";
 import Register from "./Register/Register";
@@ -9,7 +9,9 @@ import SearchResults from "./SearchResults/SearchResults";
 import BookDetails from "./BookDetails/BookDetails";
 import SearchBar from "./SearchBar/SearchBar";
 import AddVenta from './Dashboard/AddVenta';
+import Buy from "./Buy/Buy";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Footer from "./Footer/Footer";
 
 /* Get books photos */
 const reqGot = [
@@ -29,7 +31,9 @@ let reqToObject = (req) => {
 };
 
 class App extends Component {
-  state = {
+  constructor() {
+  super();
+  this.state = {
     accounts: {
       fulanito: {
         username: "fulanito",
@@ -112,8 +116,10 @@ class App extends Component {
         photos: reqToObject(reqGot[4]),
       },
     ],
-    currentAccountKey: "menganito",
+    currentAccountKey: null,
+    currentAccountEmail: '',
   };
+  }
 
   componentDidMount() {
     /* Add fullname in sellers */
@@ -140,25 +146,35 @@ class App extends Component {
     <React.Fragment>
       <SearchBar />
       <Switch>
-        <Route path="/book/:id" component={(p) => <BookDetails {...p} books={this.state.books} />} />
-        <Route path="/search" component={(p) => <SearchResults {...p} books={this.state.books} />} />
+        <Route path="/book/:id" component={(p) => <BookDetails {...p} books={this.state.books}/>} />
+        <Route path="/search" component={(p) => <SearchResults {...p} books={this.state.books}/>} />
+        <Route exact path="/buy/:bookid/:sellerid" component={Buy} />
       </Switch>
     </React.Fragment>
   );
+
+  onEmailChange(email) {
+    this.setState({currentAccountEmail: email});
+    let faccount = Object.values(this.state.accounts).find( obj => 
+      obj.email == email
+    );
+    
+    this.setState({currentAccountKey: faccount?faccount.username:null});
+  }
   render() {
     return (
       <div className="App">
         <Router>
-          <Header account={this.state.accounts[this.state.currentAccountKey]} />
+          <Header account={this.state.accounts[this.state.currentAccountKey]} email={this.state.currentAccountEmail} onEmailChange={this.onEmailChange.bind(this)}/>
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/:username/dashboard" component={() => <Dashboard account={this.state.accounts[this.state.currentAccountKey]} />} />
             <Route path="/:username/dashboard/add-venta" component={AddVenta} />
-            <Route component={this.componentsWithSearchBar} />
-            <Route component={this.componentsWithSearchBar} />
+            <Route component= { this.componentsWithSearchBar }/>
           </Switch>
+          <Footer/>
         </Router>
       </div>
     );

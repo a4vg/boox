@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import Logo from "../../assets/logo.svg";
 import styles from "./Login.module.css";
 
+
 class Login extends Component {
+	state={email:''}
+	handleIngresar = () => {    
+		this.props.onEmailChange(this.state.email);
+		this.props.closePopup();
+	}
   render() {
     return (
       <>
@@ -14,13 +20,14 @@ class Login extends Component {
 	  </div>
       <form>
 		<label className={ styles.Login }>Correo electrónico</label>
-		<input className={ styles.Login } type="text" placeholder="example@boox.com"/>
+		<input className={ styles.Login } type="text"
+			onChange={(e)=>this.setState({email:e.target.value})}	placeholder="example@boox.com"/>
 
 		<label className={ styles.Login }>Contraseña</label>
 		<input className={ styles.Login } type="password"/>
 
 		<p/>
-		<button className={ styles.ingresar }>Ingresar</button>
+		<button className={ styles.ingresar } onClick={this.handleIngresar}>Ingresar</button>
 	  </form>
 	  <div>
 		<p className={ styles.Login }>¿No tienes una cuenta?

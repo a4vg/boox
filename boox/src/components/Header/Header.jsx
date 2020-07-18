@@ -31,6 +31,9 @@ class Header extends Component {
       showLogin: !this.state.showLogin
     });
   }
+  onEmailChange(email) {
+  	this.props.onEmailChange(email);
+  }
   render() {
     return (
       <header className={styles.header}>
@@ -40,10 +43,13 @@ class Header extends Component {
             <h1>BooX</h1>
           </Link>
         </div>
+        { /*
         <div className={styles.buySellContainer}>
           <button className={styles.buy}>Comprar</button>
           <button className={styles.sell}>Vender</button>
-        </div>   
+        </div>
+          */
+        }
         {this.props.account
           ? <div className={styles.accountContainer}>
               <Link to={`/${this.props.account.username}/dashboard/`}>
@@ -68,6 +74,7 @@ class Header extends Component {
             	}
             	{this.state.showLogin
               	? <Login
+              			email={this.props.email} onEmailChange={this.onEmailChange.bind(this)}
               			closePopup={this.toggleLogin.bind(this)}
               			change={this.change.bind(this)}
               		/>
