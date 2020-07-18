@@ -11,6 +11,7 @@ button.chat {
   padding-top: 0;
   padding-bottom: 0;
   font-weight: bold;
+  z-index: 1;
 }
 
 button.open {
