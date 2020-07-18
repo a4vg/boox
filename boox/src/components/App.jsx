@@ -8,6 +8,7 @@ import Register from "./Register/Register";
 import SearchResults from "./SearchResults/SearchResults";
 import BookDetails from "./BookDetails/BookDetails";
 import SearchBar from "./SearchBar/SearchBar";
+import Buy from "./Buy/Buy";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./Footer/Footer";
 
@@ -146,6 +147,7 @@ class App extends Component {
       <Switch>
         <Route path="/book/:id" component={(p) => <BookDetails {...p} books={this.state.books}/>} />
         <Route path="/search" component={(p) => <SearchResults {...p} books={this.state.books}/>} />
+        <Route exact path="/buy/:bookid/:sellerid" component={Buy} />
       </Switch>
     </React.Fragment>
   );
@@ -168,7 +170,6 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/:username/dashboard" component={ () => <Dashboard account={ this.state.accounts[this.state.currentAccountKey] }/> } />
-            <Route component= { this.componentsWithSearchBar } />
             <Route component= { this.componentsWithSearchBar }/>
           </Switch>
           <Footer/>
