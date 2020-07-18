@@ -19,7 +19,7 @@ class VendedorBook extends Component {
                         alt="Generic placeholder"
                     />
                     <Media.Body>
-                        <h4>La Biblia 2</h4>
+                        <h4>Festín de Cuervos</h4>
                         <p style={{textAlign: "left"}}><b>Por Autor</b></p>
                         <Link to="/" className="mr-2">3 usuarios interesados</Link>
                     </Media.Body>

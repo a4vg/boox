@@ -15,17 +15,42 @@ class Historial extends Component {
                     <Table striped bordered hover size="sm">
                         <thead>
                             <tr>
-                                <th>Fecha</th>
-                                <th>Libro</th>
-                                <th>Precio</th>
-                                <th>Estado</th>
+                                <th><b>Fecha</b></th>
+                                <th><b>Libro</b></th>
+                                <th><b>Autor</b></th>
+                                <th><b>Precio</b></th>
+                                <th><b>Estado</b></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <Item />
-                            <Item />
-                            <Item />
-                            <Item />
+                            <tr>
+                                <td>04/07/2020</td>
+                                <td>Festín de Cuervos</td>
+                                <td>George R.R. Martin</td>
+                                <td>S/. 50.30</td>
+                                <td>Vendido</td>
+                            </tr>
+                            <tr>
+                                <td>01/07/2020</td>
+                                <td>Tormenta de espadas</td>
+                                <td>George R.R. Martin</td>
+                                <td>S/. 41.20</td>
+                                <td>En espera</td>
+                            </tr>
+                            <tr>
+                                <td>20/06/2020</td>
+                                <td>Danza de dragones</td>
+                                <td>George R.R. Martin</td>
+                                <td>S/. 42.50</td>
+                                <td>Vendido</td>
+                            </tr>
+                            <tr>
+                                <td>10/06/2020</td>
+                                <td>Juego de Tronos</td>
+                                <td>George R.R. Martin</td>
+                                <td>S/. 30.30</td>
+                                <td>Vendido</td>
+                            </tr>
                         </tbody>
                     </Table>
                 </Card>

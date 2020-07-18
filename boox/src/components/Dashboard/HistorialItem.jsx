@@ -7,7 +7,7 @@ class HistorialItem extends Component {
         return (
             <tr>
                 <td>04/07/2020</td>
-                <td>La Biblia 2 por Autor</td>
+                <td>Festín de Cuervos por George R.R. Martin</td>
                 <td>S/. 30.30</td>
                 <td>Vendido</td>
             </tr>
