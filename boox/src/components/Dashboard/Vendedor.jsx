@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import bs from '../../assets/bootstrap.min.css';
 import Book from './VendedorBook';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -14,7 +14,7 @@ class Vendedor extends Component {
             <Container fluid>
                 <Card className="my-4 p-3" border="primary">
                     <h2>Libros a la venta</h2>
-                    <Link to="add-venta"><Button>Agregar libro</Button></Link>
+                    <Link to="add-venta"><Button variant="success">Agregar libro</Button></Link>
                     <Row>
                         <Col md={4}>
                             <Book />

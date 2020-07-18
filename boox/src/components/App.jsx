@@ -8,6 +8,7 @@ import Register from "./Register/Register";
 import SearchResults from "./SearchResults/SearchResults";
 import BookDetails from "./BookDetails/BookDetails";
 import SearchBar from "./SearchBar/SearchBar";
+import AddVenta from './Dashboard/AddVenta';
 import Buy from "./Buy/Buy";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./Footer/Footer";
@@ -134,7 +135,7 @@ class App extends Component {
       b.seller = this.state.sellers.find((s) => {
         return s.accountKey === b.sellerId;
       });
-      
+
       return b;
     });
 
@@ -169,7 +170,8 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
-            <Route exact path="/:username/dashboard" component={ () => <Dashboard account={ this.state.accounts[this.state.currentAccountKey] }/> } />
+            <Route exact path="/:username/dashboard" component={() => <Dashboard account={this.state.accounts[this.state.currentAccountKey]} />} />
+            <Route path="/:username/dashboard/add-venta" component={AddVenta} />
             <Route component= { this.componentsWithSearchBar }/>
           </Switch>
           <Footer/>

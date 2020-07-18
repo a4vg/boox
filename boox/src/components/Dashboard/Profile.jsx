@@ -1,19 +1,21 @@
 import React, { Component } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import bs from '../../assets/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Tabs from 'react-bootstrap/Tabs';
+import Tab from 'react-bootstrap/Tab';
+import Media from 'react-bootstrap/Media';
 import Vendedor from './Vendedor';
 import Comprador from './Comprador';
 import Historial from './Historial';
-import Media from 'react-bootstrap/Media';
 import ProfileIcon from "../../assets/icons/profile-icon.svg";
+import Card from "react-bootstrap/esm/Card";
 
 class Profile extends Component {
 
     state = {
-        comp: 'comprador',
         text: 'Amo los libros, pero mas el dinero',
         edit: false,
     }
@@ -21,7 +23,7 @@ class Profile extends Component {
     render() {
 
         return (
-            <Container>
+            <Container className="mt-5">
                 <Row>
                     <Col>
                         <Media>
@@ -40,7 +42,7 @@ class Profile extends Component {
                                         <Button onClick={() => { this.setState({ edit: false }) }}>Apply</Button>
                                     </Row> :
                                     <Row>
-                                        <p style={{ textAlign: "left" }} className="ml-3">{ this.state.text }</p>
+                                        <p style={{ textAlign: "left" }} className="ml-3">{this.state.text}</p>
                                         <Button className="ml-2" onClick={() => { this.setState({ edit: true }) }}>Edit</Button>
                                     </Row>
                                 }
@@ -51,19 +53,24 @@ class Profile extends Component {
                 </Row>
                 <Row className="mt-4 mb-0">
                     <Container fluid className="mt-0">
-                        <Button type="button" onClick={() => { this.setState({ comp: 'vendedor' }) }}>Vendedor</Button>
-                        <Button type="button" onClick={() => { this.setState({ comp: 'comprador' }) }}>Comprador</Button>
-                        <Button type="button" onClick={() => { this.setState({ comp: 'historial' }) }}>Historial</Button>
+                        <Tabs defaultActiveKey="vendedor" id="uncontrolled-tab-example">
+                            <Tab eventKey="vendedor" title="Vendedor">
+                                <Card className="bg-success">
+                                    <Vendedor />
+                                </Card>
+                            </Tab>
+                            <Tab eventKey="comprador" title="Comprador">
+                                <Card className="bg-success">
+                                    <Comprador />
+                                </Card>
+                            </Tab>
+                            <Tab eventKey="historial" title="Historial">
+                                <Card className="bg-success">
+                                    <Historial />
+                                </Card>
+                            </Tab>
+                        </Tabs>
                     </Container>
-                </Row>
-                <Row>
-                    {this.state.comp === 'vendedor' && <Vendedor />}
-                </Row>
-                <Row>
-                    {this.state.comp === 'comprador' && <Comprador />}
-                </Row>
-                <Row>
-                    {this.state.comp === 'historial' && <Historial />}
                 </Row>
             </Container>
         );
