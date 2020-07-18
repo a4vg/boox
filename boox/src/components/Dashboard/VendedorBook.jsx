@@ -1,21 +1,21 @@
 import React, { Component } from "react";
-import styles from '../../assets/bootstrap.min.css';
+import bs from '../../assets/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import Media from 'react-bootstrap/Media';
 import { Link } from "react-router-dom";
 import BookIcon from "../../assets/icons/Book.svg";
-
+import GotImg from "../../assets/books/feast-crows/front.JPG"
 
 class VendedorBook extends Component {
     render() {
         return (
-            <Card className="p-1 my-2 mx-1">
+            <Card className="p-1 my-2 mx-1 bg-light">
                 <Media>
                     <img
-                        width={64}
-                        height={64}
+                        width={100}
+                        height={120}
                         className="align-self-center mr-4 ml-2"
-                        src={BookIcon}
+                        src={GotImg}
                         alt="Generic placeholder"
                     />
                     <Media.Body>

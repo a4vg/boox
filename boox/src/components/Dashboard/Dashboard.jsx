@@ -12,7 +12,7 @@ class Dashboard extends Component {
     render() {
 
         return (
-            <Profile/>
+            <Profile account={this.props.account}/>
         );
     }
 }
