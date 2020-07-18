@@ -43,10 +43,13 @@ class Header extends Component {
             <h1>BooX</h1>
           </Link>
         </div>
+        { /*
         <div className={styles.buySellContainer}>
           <button className={styles.buy}>Comprar</button>
           <button className={styles.sell}>Vender</button>
-        </div>   
+        </div>
+          */
+        }
         {this.props.account
           ? <div className={styles.accountContainer}>
               <Link to={`/${this.props.account.username}/dashboard/`}>
