@@ -57,7 +57,7 @@ class AddVenta extends Component {
                                 <Form.Control type="text" placeholder="0-553-21241-9" />
                             </Form.Group>
                             <Form.Group>
-                                <Form.Label>Títutlo</Form.Label>
+                                <Form.Label>Título</Form.Label>
                                 <Form.Control type="text" placeholder="Vientos de invierno" />
                             </Form.Group>
                             <Form.Group>

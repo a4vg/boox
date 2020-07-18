@@ -14,7 +14,7 @@ class Vendedor extends Component {
             <Container fluid>
                 <Card className="my-4 p-3" border="primary">
                     <h2>Libros a la venta</h2>
-                    <Link to="add-venta"><Button variant="success">Agregar libro</Button></Link>
+                    <Link to="/menganito/dashboard/add-venta"><Button variant="success">Agregar libro</Button></Link>
                     <Row>
                         <Col md={4}>
                             <Book />

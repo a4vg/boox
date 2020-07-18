@@ -35,7 +35,7 @@ class Profile extends Component {
                                 alt="Generic placeholder"
                             />
                             <Media.Body>
-                                {this.props.account ? <h1 color="primary"><b>{this.props.account.username}</b></h1> : <p>No hay cuenta</p>}
+                                {this.props.account ? <h1 color="primary"><b>{this.props.account.username}</b></h1> : <h1>Menganito El Vendedor</h1>}
                                 {this.state.edit ?
                                     <Row>
                                         <input type='text' name='description' onChange={e => { this.setState({ text: e.target.value }) }}></input>
