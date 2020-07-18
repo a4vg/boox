@@ -97,7 +97,7 @@ class BookDetails extends Component {
             </p>
             <div className={styles.row}>
               <div className={styles.subcolumn}>
-                <Link to={`/dashboard/${ book.sellerId }`} className={styles.BookDetails}>
+                <Link to={`/${ book.sellerId }/dashboard`} className={styles.BookDetails}>
                   <h3 className={styles.BookDetails}>Vendedor</h3>
                 </Link>
                 <SellerDetails seller={book.seller} className={styles.BookDetails}/>
