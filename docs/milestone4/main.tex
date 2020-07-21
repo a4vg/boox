@@ -1,0 +1,282 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[section]{placeins} % figures appear inside the section they've been declared
+
+% Enumerate like: 1 1.1 1.1.1 instead of 1 a) *
+\setlist[enumerate]{label*=.\arabic*, after=\normalfont}
+\setlist[enumerate,1]{label=\arabic*, font=\normalfont}
+\setlist[enumerate,2]{before=\normalfont}
+\setlist[enumerate,3]{font=\normalfont, before=\normalfont\itshape}
+
+% No indent on first line of paragraph
+\setlength{\parindent}{0pt}
+    
+\title{BooX}
+\author{Huascar Retrieval Team}
+\date{June 2020}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+    \includegraphics[scale=0.1]{img/logo.png}
+\end{center}
+\section{Project Description} % Sacado de la primera entrega
+\subsection{What will the project do?}
+Our project, called BooX, consists of a web app that facilitates the sale and interchange of used books by allowing users to upload their entire library with minimal effort, thus enabling our quick search system to put this huge database at the request of enthusiasts that are looking for that specific book they can not find or afford, or people who just want to put their library in the web and see if they get any offers. The main activities in this app would be the sale of books via mutual agreement between the owner and the buyer, and the exchange of books between owners. Whenever a sale or exchange is agreed, the participants must agree on a common place of exchange, where they have to meet physically to finalize the transaction.
+
+Another important feature of the website is its automation capability, meaning any user who uploads his/her library can receive a notification (via email) when a user is interested on his/her book and, similarly, users who haven't uploaded their libraries will see a list of the top searched books or genres, giving them the possibility of matching an offer with one of their books.
+
+As a whole, this project will fill a spot in the second-hand market, potentially improving the sales of valuable second-hand books by giving the owners a secure and fast to platform to generate revenue or exchange through these items.
+
+\begin{center}
+\includegraphics[scale=0.5]{img/diagram.png}    
+\end{center}
+
+\subsection{Objectives}
+Based on the OKR model, the team decided to focus the development of the project on the following:
+
+\subsubsection{Main objective}
+Become one of the top 3 sites with the most internet traffic for the sale and exchange of books. This objective considers the main competitors in the books business to be Amazon, due to them being the \#1 seller for almost everything and also because of their past as an online bookstore.
+
+In order to fulfill this objective, the following three indicators were selected as crucial.
+\subsubsection{Key Results} 
+\begin{itemize}
+    \item The number of stored books must be reduced by 30\%. This means that for every user that is registered in the platform, he must have gotten rid of at least 30\% of his unused books, whether by selling them or leasing them.
+    \item The number of transactions processed by books must be at least 70\% of the transactions of other booksellers. This means that if a standard bookseller sells 10 books, BooX must sell or lease a minimum of 7 books.
+    \item The sell of academic books through BooX must generate a 30\% save in our customers. This means that students that decide to buy books through our platform must find prices at least 30\% cheaper than in our competitors.
+\end{itemize}
+
+
+\section{User Description}
+Taking into consideration that our system works with books, a survey was conducted to book-readers to get a good grasp on our target user. In said survey, the majority of the surveyed are university students. Their use in books is mostly temporary, given that they employ them for studying. As such, they would be more willing to part ways with the academic books they have in possession, which is our focus with BooX. 
+
+However, in the context of this day and age, PDFs of books can be found easily and are the go-to option for students in need of them, as was observed by the survey. This means that our users would not be willing to pay a big amount of money for literature they will only use temporarily. Given that the methods they employ do not always take into account a legal system, we aim to provide a legalized and cheap method for acquiring books and fill that necessity of our target user.
+
+This necessity has been proven by the survey, in which most people responded that when they do not find a desired book, they ask for people if they have it. They also prefer physical copies rather than digital, so using a PDF is mostly a last resort that we aim to prevent. 
+
+Lastly, the user keeps their books after they have finished using them, and in good condition most of the time. This helps with the market we are aiming to create, as we would not be the ones providing the users with stock. 
+
+\section{Task Analysis}
+\subsection{Task Environment}
+All user tasks are performed inside BooX website (main page for book search and live chat for contacting the seller), except the "receive book step", which occurs at the user's house (in case of delivery) or at the meeting point (previously discussed with the seller).
+
+The first environment, BooX website, is modern, intuitive and friendly. The second environment is assumed to be a save and known place for the buyer and the seller, since it has been agreed by both.
+
+\subsection{Main Tasks}
+\begin{itemize}
+    \item Buy book
+        \begin{itemize}
+            \item Look for book
+            \item Contact seller
+            \item Pay
+        \end{itemize}
+    \item Exchange book
+    \begin{itemize}
+            \item Look for book
+            \item Contact seller
+            \item Offer another book
+        \end{itemize}
+    \item Sell book
+    \begin{itemize}
+            \item Post book information
+            \item Be contacted
+            \item Get payed
+        \end{itemize}
+\end{itemize}
+\subsection{Structured Task Analysis}
+In the following section we will analyse the "Buy book" task, one of the main tasks in BooX. "Buy book" is very similar to "Exchange book", but the "Pay" step is replaced by "Offer another book".\\
+
+\subsubsection{Textual Representation}
+Precondition: User has a BooX account\\
+\textbf{0. In order to buy book}
+    \begin{enumerate}
+    \item Access the website
+    \item Look for book
+    \begin{enumerate}
+      \item Type book name or other book information in search bar
+      \item Apply sort or filter to find book in the results
+      \item Select book
+    \end{enumerate}
+    \item Contact seller
+    \begin{enumerate}
+      \item Write a proposition to the seller for delivery or a meeting point 
+      \item Send proposition
+    \end{enumerate}
+    \item Wait and receive seller's answer
+    \begin{enumerate}
+      \item Seller does not answer
+      \item Seller does not accept proposition
+      \begin{enumerate}
+        \item Discuss other propositions
+      \end{enumerate}
+      \item Reach agreement
+    \end{enumerate}
+    \item Pay for book
+    \item Meet seller or wait for delivery
+    \item Receive book
+    \end{enumerate}
+\textbf{Plan}
+\begin{itemize}
+  \item Plan 0: do 1, 2, 3, 4, 5, 6, 7
+  \item Plan 2:
+  \begin{itemize}
+    \item Do 2.1, 2.3
+    \item If multiple similar results: do 2.1, 2.2, 2.3
+    \item If book not found with provided information: repeat 2.1 with another information
+    \item If book not available: End task
+  \end{itemize}
+  \item Plan 3: do 3.1, 3.2
+  \item Plan 4:
+  \begin{itemize}
+    \item Do 4.3
+    \item If seller does not answer: Repeat 2 to find another seller
+    \item If seller denies proposition: do 4.2, 4.2.1, 4.3
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Diagram Representation}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1.3\textwidth]{img/task-analysis-diagram.png}
+    \label{fig:task-diagram}
+\end{figure}
+
+\section{Description of technical organization or social system}
+The BooX platform has the main purpose of incentivizing the exchange of used books by providing an interface for users to upload their libraries and giving them the option to either sell or lease, and also giving the ability to buy them to any other user in the platform. This service is aimed at two main user types: book enthusiasts that usually frequent book fairs in search for rare books, and university students that don't like having to pay heavy prices for their academic books.
+
+As this platform wants to have a high amount of active users, while not requiring much resources on their part, the BooX platform has been designed as a commercial website, where every user has an account to track their library of books and their transactions, while allowing anonymous visitors to search through this libraries to find their desired products. Every user instance is connected to a private library of books in the database that are treated as commercial items, and whenever this books are on sale, another user can find them and make an offer, depending on the type of transaction and other restrictions put by the owner.
+
+For the system to achieve its purpose correctly, it must organize its users in different processes, according to what they want to achieve with the platform. For example, a user that wants to search for a specific academic book will go through different interactions than someone who just wants to upload his library to see what offers he can get. The first characteristic of the platform, then, is to divide the interface in two: one that comprises the interactions for selling/exchanging books, and one that comprises the interactions for buying/searching for books. These two subsystems share the same consistent design of the UI and the database, giving a higher degree of usability when changing between the two.
+
+In the selling/exchanging section, a user must always be registered in order to upload his library. The platform gives every user a profile page where they can upload the books they have available through a form and choose whatever conditions they want for a transaction, for example, they can set if they want to 'sell only'/'exchange only'. This interaction is responsible for adding books to the database and making them available to other users. When a user has finished uploading, it will confirm his library and proceed to wait until an offer is made. It is also possible to store a book in the library without marking it for sale right away, and this also means a user can change the status of a book ('for sale', 'not for sale') whenever he wants. Books that are not for sale will not be shown to anybody except the owner.
+
+On the other hand, the buying section is much more straightforward. Any user who wants to find a book can do so without being logged, but in order to fulfill a transaction they will be required to enter the necessary data, and they can create an account with that information if they decide to. The system has a strict restriction to only allow logged users to perform transactions, because it has to guarantee as much as possible that transactions are made between legitimate users.
+
+
+\section{Analysis of existing systems}
+Currently, we can find systems that share some features with Boox. However they are focused in the European/US market. In this section we will explain a bit more about these systems.
+
+\subsection{Bookmooch}
+
+Founded in 2006, Bookmooch is a platform for exchanging books where users can post and get books. They receive 0.1 points for posting a book and 1 point for sending one. No fees or memberships are involved. Users only pay for the shipping. Its interface (figure \ref{fig:bookmooch}) feels old and looks like it has not received maintenance in a long time. Despite of looking discontinued, it has registered activity in the last months. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{img/bookmooch.png}
+    \caption{Bookmooch interface}
+    \label{fig:bookmooch}
+\end{figure}
+
+\subsection{BookCrossing}
+Founded in 2001, BookCrossing defines itself as the act of releasing a book "in the wild" for a stranger to find it. With more than 1.8M users and 13M books, BookCrossing is present in 132 countries. About the interface it looks a little modern and friendly than BookMooch, however, the search feature is not intuitive since in first instance it asks only for the BCID code (figure \ref{fig:bookcrossing1}).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{img/bookcrossing1.png}
+    \caption{Bookcrossing search}
+    \label{fig:bookcrossing1}
+\end{figure}
+
+When the search is done, the results (figure \ref{fig:bookcrossing2}) are not shown in a friendly way, it looks unarranged and not sorted by any relevant feature.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{img/bookcrosing_search.png}
+    \caption{Bookcrossing results}
+    \label{fig:bookcrossing2}
+\end{figure}
+
+As explained above, the existing systems have some issues that can impact negatively in the user experience. Performing them in a better way can represent an advantage for Boox.
+
+\section{Usability Criteria}
+It is necessary that the application meets the usability principles for learning, flexibility and robustness. As such, the interface has to be designed with the following in mind:
+\begin{itemize}
+    \item \textbf{Predictability:} the user must know what each step of the process entails, be it for adding a book or to search for one. 
+    \item \textbf{Familiarity:} the user must interact with the interface with ease. The usage should be similar to other market-like systems.
+    \item \textbf{Consistency:} Icons and interactive objects must follow the standard set up by previous systems. 
+    \item \textbf{Honesty:} the system should notify the user when someone is interested in their book, or show all the matching results of the searched title. Also, if a book is already being requested by another user, the interface should show so to prevent false availability.
+    \item \textbf{Substitutivity:} the user should be able to log into their account successfully with their username or their email. Also, the capitalization of the titles should not matter in the process of searching for a book.
+\end{itemize}
+
+To evaluate our designed interface, we will use the following Nielsen heuristics that are better suited for this project:
+\begin{itemize}[itemsep=1pt, parsep=1pt]
+    \item Visibility of system status
+    \item Match between system and the real world
+    \item Consistency and standards
+    \item Error prevention
+    \item Aesthetic and minimalist design
+    \item Help users recognize, diagnose, and recover from errors
+    \item Help and documentation
+\end{itemize}
+
+
+\section{Feedback}
+In this section we will talk about the feedback received during the presentation and the comments extracted from the \href{https://docs.google.com/forms/d/1PoXi9NhbjuxqX-TVijiMF3n5Dru8blxZACKOnZKqEVQ/edit?usp=sharing}{Feedback Form}. 
+
+\subsection{Perception}
+Users have the following perceptions about the platform:
+\begin{itemize}
+    \item 75\% of users consider easy the way to search a book in the platform. Figure \ref{fig:search_ease}.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.3]{img/feedback/search_ease.png}
+        \caption{Ease to search books}
+        \label{fig:search_ease}
+    \end{figure}
+    \item 100\% of users consider the \textit{most searched} and \textit{suggestions} useful. Figure \ref{fig:suggested}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.3]{img/feedback/suggested_books.png}
+        \caption{Utility of suggested books section}
+        \label{fig:suggested}
+    \end{figure}
+\end{itemize}
+
+\subsection{Considerations}
+In order to make the platform easier for the users we must consider:
+\begin{itemize}
+    \item Show categories in the landing page: It would be helpful for the user to view the books segmented by categories on the landing page.
+    \item Highlight the bottom options in the landing page: The bottom options are not visible for the users.
+    \item Make explicit what the vendor's rank represent.
+\end{itemize}
+
+
+\section{Conclusions}
+Following the analysis of the feedback received by the classroom, and also our internal evaluation using the previously chosen heuristics, we can conclude, after careful consideration, taking into account the challenges that were faced, and the goals that were set, the following conclusions:
+
+\begin{itemize}
+    \item The book genre classification system designed for the platform needs to be presented in a more 'default' way, so that our users can have an idea of the genres available and how they can perform their searches by using it.
+    \item It is important to prioritize the interaction between buyer and seller, as it is the main selling point of our platform.
+    \item The impact of the search system presented to our users depends on its ability to show similar books that might be of their interest, maximizing the time they spend on the platform.
+    \item The use of 'suggested'/'looking for' capabilities is very beneficial to the interface as it allows users to find and track books in a more personalized way.
+    \item Notifications are crucial for keeping the user invested in the platform. Their frequency, however, must be customizable to as to not overwhelm them.
+\end{itemize}
+
+
+
+\section{References}
+\begin{itemize}
+    \item BookMooch (2020). Available at www.bookmooch.com
+    \item BookCrossing (2020). Available at www.bookcrossing.com
+    \item Nielsen, J. (1994). Heuristic evaluation. In Nielsen, J., and Mack, R.L. (Eds.), Usability Inspection Methods, John Wiley \& Sons, New York, NY.
+\end{itemize}
+
+
+
+\section{Appendices}
+\begin{itemize}
+    \item Link to design (Miro): \url{https://miro.com/app/board/o9J_kqXGkRE=/}
+    \item Link to BooX demonstration video: \url{https://drive.google.com/file/d/1_UJooecc9B5TMETuAkAFtq7kJzc0HOFE/view?usp=sharing}
+    \item Link to form (Google Forms):
+    \url{https://docs.google.com/forms/d/1PoXi9NhbjuxqX-TVijiMF3n5Dru8blxZACKOnZKqEVQ/edit?usp=sharing}
+    \item Mockups: \input{mockups}
+\end{itemize}
+
+
+\end{document}
+
