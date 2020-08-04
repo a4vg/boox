@@ -47,6 +47,13 @@ class BookDetails extends Component {
     }
   }
 
+  sellerLink = (sellerId) => {
+    return {
+      pathname: `/${ sellerId }/dashboard`,
+      fromBookDetails: true
+    }
+  }
+
   render() {
     let book = this.props.books.find(
       (b) => b.isbn === this.props.match.params.id
@@ -97,7 +104,7 @@ class BookDetails extends Component {
             </p>
             <div className={styles.row}>
               <div className={styles.subcolumn}>
-                <Link to={`/${ book.sellerId }/dashboard`} className={styles.BookDetails}>
+                <Link to={this.sellerLink(book.sellerId)} className={styles.BookDetails}>
                   <h3 className={styles.BookDetails}>Vendedor</h3>
                 </Link>
                 <SellerDetails seller={book.seller} className={styles.BookDetails}/>

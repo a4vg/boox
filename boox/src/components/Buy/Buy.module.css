@@ -72,6 +72,43 @@
   font-weight: 700;
 }
 
+ /* Stage Content */
+.contentStage {
+  margin: auto;
+  text-align: center;
+  padding: 5em;
+}
+
+.contentStage p {
+  font-size: 1.5rem;
+}
+
+.contentStage button {
+  margin: 1em;
+}
+
+.contentStage button.cancelar {
+   background-color: #e22929;;
+ }
+
+.contentStage .confirmar {
+  display: inline-block;
+  position: relative;
+}
+
+.contentStage .confirmar button {
+   background-color: var(--boox-green);
+}
+
+.contentStage .confirmar span {
+  position: absolute;
+  display: block;
+  margin-top: -0.9rem;
+  font-size: 0.9rem;
+  color: var(--boox-green);
+  font-weight: 700;
+}
+
 
 
 

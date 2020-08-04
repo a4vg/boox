@@ -10,9 +10,9 @@ class Dashboard extends Component {
     }
 
     render() {
-
+      let showPrivateInfo = this.props.location.fromBookDetails? false : true;
         return (
-            <Profile account={this.props.account}/>
+            <Profile showPrivateInfo={showPrivateInfo} account={this.props.account}/>
         );
     }
 }

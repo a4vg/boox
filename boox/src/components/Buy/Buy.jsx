@@ -35,7 +35,7 @@ class Buy extends Component {
         <div className={ styles.title }>
           <img src={ProfileIcon}/>
           <h1>Vendedor: <span style={{fontWeight: 400}}>{ book.seller.fullname }</span></h1>
-          <Link to={`/${book.sellerId}/dashboard`}><InfoIcon className={styles.infoicon} width="30px" height="30px"/></Link>
+          <Link to={{pathname: `/${book.sellerId}/dashboard`, fromBookDetails: true}}><InfoIcon className={styles.infoicon} width="30px" height="30px"/></Link>
           <PurchaseStage/>
         </div>
         <div className={styles.BookStageContainer}>
@@ -50,7 +50,15 @@ class Buy extends Component {
             </div>
           </div>
           <div className={styles.contentStage}>
-            
+            <p>Menganito y tú están discutiendo los términos y condiciones del pago y entrega. Si han llegado a un acuerdo, haz click en confirmar</p>
+            <div>
+              <button className={styles.cancelar}>Cancelar</button>
+              <div className={styles.confirmar}>
+                <button>Confirmar</button>
+                <span>El vendedor también tendrá que confirmar</span>
+              </div>
+
+            </div>
           </div>
         </div>
         

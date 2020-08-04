@@ -170,7 +170,7 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
-            <Route exact path="/:username/dashboard" component={() => <Dashboard account={this.state.accounts[this.state.currentAccountKey]} />} />
+            <Route exact path="/:username/dashboard" component={(p) => <Dashboard {...p} account={this.state.accounts[this.state.currentAccountKey]} />} />
             <Route path="/:username/dashboard/add-venta" component={AddVenta} />
             <Route component= { this.componentsWithSearchBar }/>
           </Switch>

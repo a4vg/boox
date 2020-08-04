@@ -23,7 +23,7 @@ class Profile extends Component {
     render() {
 
         return (
-            <Container className="mt-5">
+            <Container className="mt-5 pb-5">
                 <Row>
                     <Col>
                         <Media>
@@ -35,7 +35,7 @@ class Profile extends Component {
                                 alt="Generic placeholder"
                             />
                             <Media.Body>
-                                {this.props.account ? <h1 color="primary"><b>{this.props.account.username}</b></h1> : <h1>Menganito El Vendedor</h1>}
+                                {this.props.account ? <h1 color="primary"><b>{this.props.account.firstname + " " + this.props.account.lastname }</b></h1> : <h1>Menganito El Vendedor</h1>}
                                 {this.state.edit ?
                                     <Row>
                                         <input type='text' name='description' onChange={e => { this.setState({ text: e.target.value }) }}></input>
@@ -43,7 +43,7 @@ class Profile extends Component {
                                     </Row> :
                                     <Row>
                                         <p style={{ textAlign: "left" }} className="ml-3">{this.state.text}</p>
-                                        <Button className="ml-2" onClick={() => { this.setState({ edit: true }) }}>Edit</Button>
+                                        {this.props.showPrivateInfo && <Button className="ml-2" onClick={() => { this.setState({ edit: true }) }}>Edit</Button>}
                                     </Row>
                                 }
 
@@ -56,18 +56,22 @@ class Profile extends Component {
                         <Tabs defaultActiveKey="vendedor" id="uncontrolled-tab-example">
                             <Tab eventKey="vendedor" title="Vendedor">
                                 <Card className="bg-success">
-                                    <Vendedor />
+                                    <Vendedor showAgregarLibro={this.props.showPrivateInfo} />
                                 </Card>
                             </Tab>
-                            <Tab eventKey="comprador" title="Comprador">
-                                <Card className="bg-success">
+                            <Tab eventKey="comprador" title={this.props.showPrivateInfo && "Comprador"}>
+                                { this.props.showPrivateInfo &&
+                                  <Card className="bg-success">
                                     <Comprador />
-                                </Card>
+                                  </Card>
+                                }
                             </Tab>
-                            <Tab eventKey="historial" title="Historial">
+                            <Tab eventKey="historial" title={this.props.showPrivateInfo && "Historial"}>
+                                { this.props.showPrivateInfo &&
                                 <Card className="bg-success">
                                     <Historial />
                                 </Card>
+                                }
                             </Tab>
                         </Tabs>
                     </Container>
